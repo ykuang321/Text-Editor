@@ -26,15 +26,12 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Use the .add() method on the store and pass in the content.
-  const request = store.put({ jate: content});
+  const request = store.put({ text: content });
 
   // Get confirmation of the request.
   const result = await request;
   console.log('🚀 - data saved to the database', result);
-}
-
-
-console.error('putDb not implemented');
+};
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
